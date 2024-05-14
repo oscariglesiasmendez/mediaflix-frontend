@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { MatIconModule } from '@angular/material/icon';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductCardComponent,
+    ProductDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
