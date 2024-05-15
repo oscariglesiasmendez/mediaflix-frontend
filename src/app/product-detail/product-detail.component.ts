@@ -42,7 +42,7 @@ export class ProductDetailComponent implements OnInit {
       language: 'Multiidioma',
       productType: 'GAME',
       price: 35,
-      rating: 4.1,
+      rating: 2,
       url: 'https://howlongtobeat.com/games/83145_Hogwarts_Legacy.jpg',
       genre: 'Acción, Aventura, Rol',
       releaseDate: '2023-02-10',
