@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../models/interfaces';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-detail',
@@ -32,6 +33,21 @@ export class ProductDetailComponent implements OnInit {
 
     console.log(this.item)
   }
+
+  ratingcount=0;
+  totalrating=0;
+
+  Finalrating:any;
+
+  ratingcontrol=new FormControl(0);
+  GetRating(){
+    this.ratingcount++;
+    this.totalrating +=this.ratingcontrol?.value || 0;
+    //console.log(this.ratingcontrol.value);
+    this.Finalrating= (this.totalrating/this.ratingcount).toFixed(2)
+  }
+
+
   games: any[] = [
     {
       productId: 1,

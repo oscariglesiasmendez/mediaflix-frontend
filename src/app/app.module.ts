@@ -9,13 +9,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductCardComponent,
     ProductDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
