@@ -1,5 +1,5 @@
 # Etapa 1: Construcción
-FROM node:14 AS build
+FROM node:18 AS build
 
 # Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
@@ -27,3 +27,4 @@ EXPOSE 80
 
 # Comando por defecto para iniciar nginx
 CMD ["nginx", "-g", "daemon off;"]
+
