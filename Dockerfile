@@ -1,18 +1,25 @@
-FROM node:18.13.0 as build
+# Etapa 1: Construcción
+FROM node:18 AS build
 
+# Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
+# Copiar package.json y package-lock.json al directorio de trabajo
 COPY package*.json ./
 
+# Instalar las dependencias del proyecto
 RUN npm install
 
 RUN npm install -g @angular/cli
 
+# Copiar el código fuente de la aplicación al directorio de trabajo
 COPY . .
 
-RUN ng build --configuration=production
+# Construir la aplicación para producción
+RUN npm run build --prod
 
-FROM nginx:latest
+# Etapa 2: Servir la aplicación
+FROM nginx:alpine
 
 # Copiar los archivos construidos desde la etapa de construcción a la ubicación donde nginx los servirá
 COPY --from=build /app/dist/[mediaflix-frontend] /usr/share/nginx/html
